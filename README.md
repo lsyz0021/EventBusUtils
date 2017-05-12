@@ -15,7 +15,7 @@ EventBusUtils.cancelEventDelivery(new Object());// 取消事件
 
 接收事件方法可以通过@Subscribe(priority = 1),priority的值来决定接收事件的顺序,
 数值越高优先级越大,默认优先级为0.(注意这里优先级设置只有在同一个线程模型才有效)
- 
+
 ## ThreadMode.MAIN 模式
 
 不管从哪个线程发出的事件，MAIN模式都会在UI（主线程）线程执行onMessageEventMain()方法，
