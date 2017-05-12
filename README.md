@@ -1,8 +1,21 @@
 # EventBusUtils
 
+方法：
+```
+EventBusUtils.register(this);					// 注册EventBus
+EventBusUtils.unregister(this);					// 取消注册
+EventBusUtils.post(new Object());				// 发送事件
+EventBusUtils.postSticky(new Object());			// 发送粘性事件
+EventBusUtils.removeStickyEvent(Object.class);	// 移除指定的粘性事件
+EventBusUtils.removeAllStickyEvents();			// 移除所有的粘性事件
+EventBusUtils.cancelEventDelivery(new Object());// 取消事件
+```
+
+默认不开启EventBus加速模式，如果想开启加速模式请参考： [http://blog.csdn.net/lsyz0021/article/details/51985307](http://blog.csdn.net/lsyz0021/article/details/51985307)
+
 接收事件方法可以通过@Subscribe(priority = 1),priority的值来决定接收事件的顺序,
 数值越高优先级越大,默认优先级为0.(注意这里优先级设置只有在同一个线程模型才有效)
- 
+
 ## ThreadMode.MAIN 模式
 
 不管从哪个线程发出的事件，MAIN模式都会在UI（主线程）线程执行onMessageEventMain()方法，
@@ -51,8 +64,8 @@ public void onMessageEventAsync(MyEvent.Message event) {
 
 粘性事件，能够收到订阅之前发送的消息。但是它只能收到最新的一次消息，比如说在未订阅之前已经发送了多条黏性消息了，然后再订阅只能收到最近的一条消息。
 
+注意：
 
-### 注意：
 - @Subscribe 下的方法必须为public
 - postSticky()发送的粘性消息订阅时必须@Subscribe(sticky = true)否则接收不到
 - 发送的event事件是object类
