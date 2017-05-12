@@ -1,13 +1,13 @@
 # EventBusUtils
 
-方法：
+EventBus方法：
 ```
-EventBusUtils.register(this);					// 注册EventBus
-EventBusUtils.unregister(this);					// 取消注册
-EventBusUtils.post(new Object());				// 发送事件
-EventBusUtils.postSticky(new Object());			// 发送粘性事件
+EventBusUtils.register(this);			// 注册EventBus
+EventBusUtils.unregister(this);			// 取消注册
+EventBusUtils.post(new Object());		// 发送事件
+EventBusUtils.postSticky(new Object());		// 发送粘性事件
 EventBusUtils.removeStickyEvent(Object.class);	// 移除指定的粘性事件
-EventBusUtils.removeAllStickyEvents();			// 移除所有的粘性事件
+EventBusUtils.removeAllStickyEvents();		// 移除所有的粘性事件
 EventBusUtils.cancelEventDelivery(new Object());// 取消事件
 ```
 
