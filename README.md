@@ -1,6 +1,6 @@
 # EventBusUtils
 
-EventBus方法：
+EventBusUtils中的方法：
 ```
 EventBusUtils.register(this);			// 注册EventBus
 EventBusUtils.unregister(this);			// 取消注册

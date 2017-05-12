@@ -21,3 +21,16 @@ android {
 dependencies {
     compile 'org.greenrobot:eventbus:3.0.0'
 }
+
+apply plugin: 'com.novoda.bintray-release'
+publish {
+    bintrayUser = 'hfaxs'               // 登陆账号
+    userOrg = 'hfaxs'                   // bintray.com/用户名
+    repoName = 'eventbus'               // Repositories名，默认为"maven"
+    groupId = 'com.lsyz0021.eventbus'   // 项目的包名
+    artifactId = 'eventbus'             // 上传到bintray里的Package Name(这里填什么就显示什么)
+    publishVersion = '1.0'              // 版本号(这里填什么就显示什么)
+    dryRun = false                      // false:上传，true：不上传
+    desc = 'this is a eventBus Utils'   //描述，不重要
+    website = 'https://github.com/lsyz0021/EventBusUtils'   //项目的地址，不重要
+}
